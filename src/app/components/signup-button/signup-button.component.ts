@@ -1,8 +1,8 @@
 // src/app/components/signup-button/signup-button.component.ts
 
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { AuthService } from '@auth0/auth0-angular';
+import {AuthService} from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-signup-button',
@@ -14,6 +14,6 @@ export class SignupButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   loginWithRedirect(): void {
-    this.auth.loginWithRedirect({ screen_hint: 'signup' });
+    this.auth.loginWithRedirect({authorizationParams: {prompt: 'login'}});
   }
 }
