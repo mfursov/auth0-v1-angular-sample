@@ -38,6 +38,16 @@ export class AppComponent {
         }
         return this.idToken?.exp - Math.floor(Date.now() / 1000);
     }
+
+    async callGetAccessTokenSilently(): Promise<void> {
+        const accessToken = await firstValueFrom(this.auth.getAccessTokenSilently());
+        console.log('getAccessTokenSilently result token: ', accessToken);
+    }
+
+    async callGetAccessTokenWithPopup(): Promise<void> {
+        const accessToken = await firstValueFrom(this.auth.getAccessTokenWithPopup());
+        console.log('getAccessTokenWithPopup result token: ', accessToken);
+    }
 }
 
 
