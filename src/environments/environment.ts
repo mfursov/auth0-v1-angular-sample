@@ -1,16 +1,13 @@
 // src/environments/environment.ts
 
-import { domain, clientId, audience, serverUrl } from '../../auth_config.json';
-
 export const environment = {
   production: false,
   auth: {
-    domain,
-    clientId,
+    domain: 'auth0-angular-sample.us.auth0.com',
+    clientId: '0w6wUUGqSjhOwTXKjXaco8kqVbHGM6Te',
     redirectUri: window.location.origin,
-    audience,
   },
   dev: {
-    serverUrl,
+    serverUrl: 'http://localhost:4040',
   },
 };
